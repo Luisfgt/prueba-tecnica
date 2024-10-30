@@ -19,12 +19,11 @@ export const SideBar = ({ options }: { options: any[] }) => {
             >
                 <Title
                     isSubtitle={false}
-                    size='h5'
+                    size='h4'
                     text='Search'
                 />
                 <SearchComponent
                     searchFunction={(value) => console.log(value)}
-                    state={'hola'}
                 />
             </div>
             <div
@@ -36,7 +35,8 @@ export const SideBar = ({ options }: { options: any[] }) => {
                     text='Generes'
                 />
                 <SelectComponent
-                    onSelect={(element) => setSelectedOption(element)}
+                    onSelect={(element) => {
+                        setSelectedOption(element)}}
                     options={options}
                     state={selectedOption}
                 />

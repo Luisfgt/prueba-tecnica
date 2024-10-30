@@ -13,7 +13,7 @@ export const TopMovieComponent = ({ movie }: { movie: Movie }) => {
     const baseUrl = "https://image.tmdb.org/t/p/";
     const size = "original";
     const posterUrl = `${baseUrl}${size}${movie.poster_path}`;
-    
+
     const [isFavorite, setIsFavorite] = React.useState(false)
 
     return (

@@ -4,6 +4,7 @@ import style from './organismos.module.css'
 import Icons from '../Atomos/Icons'
 import { Button } from '../Atomos/Button'
 import { ModalLogin } from './ModalLogin'
+import { ModalSignOut } from '../Moleculas/ModalSignOut'
 
 export const NavBar = () => {
 
@@ -19,6 +20,7 @@ export const NavBar = () => {
             >
                 <div>
                     {Icons('').Logo}
+
                 </div>
                 <Button
                     className={style.buttonNavBar}
@@ -40,9 +42,20 @@ export const NavBar = () => {
                 onClick={() => setModalLogin(!modalLogin)}
             >
                 {!logged ? Icons('').ProfileNoLog : Icons('').Profile}
+
+                {modalLogin && logged &&
+                    <ModalSignOut
+                        setLogged={setLogged}
+                        closeModal={() => setModalLogin(false)}
+                        openModal={modalLogin}
+                    />
+                }
             </div>
-            {modalLogin &&
+
+
+            {modalLogin && !logged &&
                 <ModalLogin
+                    setLogged={setLogged}
                     closeModal={() => setModalLogin(false)}
                     openModal={modalLogin}
                 />

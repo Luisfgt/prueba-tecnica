@@ -7,13 +7,15 @@ import { SideBar } from '../Organismos/SideBar'
 import { MultipleCards } from '../Organismos/MultipleCards'
 
 export const HomePage = ({ cards, genres, popularCard, nowPlayingCard, upcomingCard, topRatedCard }: { cards: Movie[], genres: string[], popularCard: Movie[], nowPlayingCard: Movie[], upcomingCard: Movie[], topRatedCard: Movie[] }) => {
+
+
     return (
         <div
             className={style.homePage}
         >
             <NavBar />
             <TopMovieComponent
-                movie={cards[0]}
+                movie={topRatedCard[10]}
             />
             <SideBar
                 options={genres}

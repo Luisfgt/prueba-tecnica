@@ -72,11 +72,16 @@
 .searchComponent {
     display: flex;
     width: 100%;
-    height: fit-content;
+    height: 2.5rem;
+    align-items: center;
     justify-content: space-between;
     background: var(--DarkBg2);
     color: var(--White1);
     border-bottom: 0.1rem solid var(--White1);
+    gap: 1rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
 }
 
 .searchComponent::placeholder {
@@ -90,6 +95,8 @@
     font-weight: normal;
     color: var(--White1);
     padding: 1rem;
+    outline: none;
+    border: none;
 }
 
 .cardContainer2 {
@@ -184,4 +191,42 @@
 
 .imageCard:hover {
     transform: scale(1.1);
+}
+
+.searchAndMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.selectContainer {
+    display: flex;
+    width: 100%;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 0.5rem;
+    background: var(--DarkBg2);
+}
+
+.selectContainerOptions {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonSignOut {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    height: 2.5rem;
+    background: var(--PrimaryYellow);
+    color: var(--DarkBg1);
+    bottom: -3rem; 
+    left: -2.1rem;
 }

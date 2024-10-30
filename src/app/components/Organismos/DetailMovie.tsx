@@ -10,9 +10,11 @@ import { CardsContainer } from './CardsContainer'
 import Image from 'next/image'
 import axios from 'axios'
 
-export const DetailMovie = ({ movieId, recomendation, API_MOVIES_URL, API_MOVIES }: { movieId: string, recomendation: Movie[], API_MOVIES_URL: string, API_MOVIES: string }) => {
+export const DetailMovie = ({ movieId, API_MOVIES_URL, API_MOVIES, favorites }: { movieId: string, API_MOVIES_URL: string, API_MOVIES: string, favorites: Movie[] }) => {
 
     const [movie, setMovie] = React.useState<MovieDetail>([] as unknown as MovieDetail)
+    const [recomendation, setRecommentation] = React.useState<Movie[]>([])
+
 
     const baseUrl = "https://image.tmdb.org/t/p/";
     const size = "original";
@@ -37,6 +39,24 @@ export const DetailMovie = ({ movieId, recomendation, API_MOVIES_URL, API_MOVIES
                 console.log(error);
             }
         }
+
+        const getMovieRecomendation = async () => {
+            try {
+                const movie = await axios.get(`${API_MOVIES_URL}movie/${movieId}/recommendations?`,
+                    {
+                        params: {
+                            api_key: API_MOVIES,
+                            language: 'en-US'
+                        }
+                    }
+                )
+                return setRecommentation(movie.data)
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getMovieRecomendation()
         getMovie()
 
     }, [])
@@ -131,6 +151,8 @@ export const DetailMovie = ({ movieId, recomendation, API_MOVIES_URL, API_MOVIES
                 className={style.detailMovieCards}
             >
                 <CardsContainer
+                    putInFavorites={(movie: Movie) => console.log(movie)}
+                    favorites={favorites}
                     cards={recomendation}
                     titleCategory='Recommendations'
                 />

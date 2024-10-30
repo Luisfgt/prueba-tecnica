@@ -3,6 +3,9 @@ import { Title } from './Title'
 import Icons from './Icons'
 
 export const Button = ({ text, className, onClick, icon, widthLogo }: { text: string, className: string, onClick: () => void, icon?: string, widthLogo?: string }) => {
+
+    console.log(icon, 'hola estoy acá');
+
     return (
         <div
             className={className}

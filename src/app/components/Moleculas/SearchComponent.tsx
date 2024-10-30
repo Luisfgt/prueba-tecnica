@@ -3,7 +3,7 @@ import { Title } from '../Atomos/Title'
 import Icons from '../Atomos/Icons'
 import style from './moleculas.module.css'
 
-export const SearchComponent = ({ state, searchFunction }: { state: any, searchFunction: (value: string) => void }) => {
+export const SearchComponent = ({ searchFunction }: { searchFunction: (value: string) => void }) => {
 
     const [valueOfSearch, setValueOfSearch] = React.useState('')
 
@@ -18,11 +18,12 @@ export const SearchComponent = ({ state, searchFunction }: { state: any, searchF
                 onChange={(e) => setValueOfSearch(e.target.value)}
                 onKeyDown={() => searchFunction(valueOfSearch)}
                 className={style.searchInput}
+                style={{ background: 'none' }}
             />
             <div
-            style={{padding: '1rem'}}
+                style={{ padding: '1rem' }}
             >
-                {Icons().SearchIcon}
+                {Icons('').SearchIcon}
             </div>
         </div>
     )

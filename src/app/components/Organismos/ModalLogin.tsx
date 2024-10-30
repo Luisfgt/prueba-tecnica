@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '../Atomos/Button'
 import style from './organismos.module.css'
 import { Paragraph } from '../Atomos/Paragraph'
 import { Title } from '../Atomos/Title'
 import LoginIllustration from '../../../../public/LogInIllustration.png'
 import SignUpIllustration from '../../../../public/SignUpIllustration.png'
+import { InputComponent } from '../Moleculas/InputComponent'
 
-export const ModalLogin = ({ openModal, closeModal }: { openModal: boolean, closeModal: () => void }) => {
+export const ModalLogin = ({ openModal, closeModal, setLogged }: { openModal: boolean, closeModal: () => void, setLogged: (logged: boolean) => void }) => {
 
     const [signUpOrLogin, setSignUpOrLogin] = React.useState('SignUp')
+    const [infoToLogIn, setInfoToLogIn] = React.useState({
+        email: '',
+        password: ''
+    })
+    const [type, setType] = useState(true)
+
+    const onChange = (e: any) => {
+        setInfoToLogIn((prev) => (
+            {
+                ...prev,
+                [e.target.name]: e.target.value
+            }
+        ))
+    }
 
     return (
         <div className={style.backSite}>
@@ -45,14 +60,58 @@ export const ModalLogin = ({ openModal, closeModal }: { openModal: boolean, clos
                             > </div>
                         </div>
                         <div
-                        className={style.buttonAndParagraph}
+                            className={style.buttonAndParagraph}
+                            style={{ paddingTop: signUpOrLogin === 'SignUp' ? '20rem' : '2rem' }}
                         >
-                            <Button
+                            {signUpOrLogin === 'SignUp' ? <Button
                                 className={style.buttonInitRegister}
                                 text='Register with your Email'
                                 onClick={() => console.log('hola')}
                                 icon='EmailIcon'
                             />
+                                :
+                                <div
+                                    className={style.inputContainer}>
+                                    <Paragraph
+                                        className={style.paragraph}
+                                        size='h5'
+                                        text='We love having you back'
+                                    />
+                                    <InputComponent
+                                        className={style.inputOfLogIn}
+                                        name='email'
+                                        type='email'
+                                        disabled={false}
+                                        placeholder='Email'
+                                        value={infoToLogIn.email}
+                                        onChange={(e: string) => onChange(e)}
+                                        key={'email2'}
+                                        classNameIsInContainer={true}
+                                    />
+                                    <InputComponent
+                                        type={type ? 'password' : 'text'}
+                                        className={style.inputOfLogIn}
+                                        name='password'
+                                        disabled={false}
+                                        placeholder='Password'
+                                        value={infoToLogIn.password}
+                                        onChange={(e: string) => onChange(e)}
+                                        key={'email'}
+                                        icon='Visibility'
+                                        classNameIsInContainer={true}
+                                        onClickIcon={() => setType(!type)}
+                                    />
+                                    <Button
+                                        className={style.buttonInitRegister}
+                                        text='Continue'
+                                        icon='Ticket'
+                                        onClick={() => {
+                                            closeModal()
+                                            setLogged(true)
+                                        }}
+                                    />
+                                </div>
+                            }
                             <Paragraph
                                 className={style.paragraph}
                                 size='h5'
