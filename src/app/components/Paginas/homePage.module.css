@@ -1,0 +1,9 @@
+.homePage {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: minmax(260px, 260px) minmax(50%, 100%);
+    grid-template-rows: minmax(69px, 69px) minmax(436px, 436px) 1fr;
+    height: fit-content;
+    min-height: 100vh;
+    max-width: 100vw;
+}

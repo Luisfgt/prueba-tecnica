@@ -1,6 +1,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --White1: #F6F6F6;
+  --DarkBg1: #262626;
+  --DarkBg2: #1C1C1C;
+  --backgroundCards: linear-gradient(180deg, #454545 0%, #343434 100%);
+  --PrimaryYellow: #F0B90B;
+  --SuccessColor: #4DA14F;
+  --WarningColor: #FF8800;
+  --h1: 35px;
+  --h2: 24px; 
+  --h3: 20px; 
+  --h4: 16px;  
+  --h5: 14px;  
+  --h6: 12px;  
+  --h7: 9px;  
 }
 
 @media (prefers-color-scheme: dark) {

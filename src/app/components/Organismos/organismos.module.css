@@ -1,0 +1,367 @@
+ .examples {
+     --White1: #F6F6F6;
+     --DarkBg1: #262626;
+     --DarkBg2: #1C1C1C;
+     --DarkBg3: #343434;
+     --BackgroundOnHover: #454545;
+     --backgroundCards: linear-gradient(180deg, #454545 0%, #343434 100%);
+     --PrimaryYellow: #F0B90B;
+     --SuccessColor: #4DA14F;
+     --WarningColor: #FF8800;
+     --NeutralColor: #B0B0B0;
+     --DegradedColor: linear-gradient(111deg, rgba(255, 255, 255, 0.25) 0%, #FFFFFF 99.18%);
+     --BlackFilter: linear-gradient(180deg, rgba(102, 102, 102, 0) 0%, black 100%);
+     --h1: 35px;
+     --h2: 24px;
+     --h3: 20px;
+     --h4: 16px;
+     --h5: 14px;
+     --h6: 12px;
+     --h7: 9px;
+ }
+
+ .labelAndInput {
+     display: flex;
+     flex-direction: column;
+     align-items: start;
+ }
+
+ .sideBar {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 100%;
+     background: var(--DarkBg1);
+     grid-column: 1/2;
+     grid-row: 3/4;
+ }
+
+ .navBar {
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+     height: 100%;
+     grid-column: 1 / 3;
+     align-items: center;
+     padding-inline: 10rem;
+ }
+
+ .buttonNavBar {
+     display: flex;
+     justify-content: center;
+     width: fit-content;
+     padding-inline: 1rem;
+     background: none;
+     color: var(--White1);
+     font-size: var(--h4);
+     font-weight: normal;
+     transition: all 0.3s ease-in-out;
+ }
+
+ .buttonNavBar:hover {
+     color: var(--PrimaryYellow);
+ }
+
+ .buttonsAndLogo {
+     display: flex;
+     gap: 2rem;
+     width: 100%;
+     align-items: center;
+ }
+
+ .icon {
+     display: flex;
+     width: 25px;
+     height: 25px;
+     cursor: pointer;
+ }
+
+
+ .favoriteAndRating {
+     display: flex;
+     gap: 1rem;
+     height: fit-content;
+     width: fit-content;
+     align-items: center;
+ }
+
+ .imageTopMovie {
+     position: absolute;
+     object-fit: cover;
+     width: 100%;
+     height: 100%;
+ }
+
+ .cardsContainer {
+     display: flex;
+     gap: 1rem;
+     min-width: 100%;
+     width: fit-content;
+ }
+
+ .cardsOverview {
+     display: flex;
+     width: 100%;
+     height: fit-content;
+     padding-block: 0.5rem;
+     max-width: 100%;
+     overflow: auto;
+ }
+
+ .ratingAndTitle {
+     display: flex;
+     gap: 0.5rem;
+ }
+
+ .ratingAndFavorite {
+     display: flex;
+     width: 100%;
+ }
+
+ .detailMovieCards {
+     display: flex;
+     justify-content: center;
+     width: 100%;
+     height: fit-content;
+     padding: 2rem;
+ }
+
+ .detailMovieCard {
+     display: flex;
+     gap: 2rem;
+     padding: 2rem;
+     width: 100%;
+     height: fit-content;
+     position: relative;
+ }
+
+ .detailContainer {
+     display: flex;
+     flex-direction: column;
+     width: 100vw;
+     height: 100%;
+     min-height: 100vh;
+ }
+
+
+ .topMovieComponent {
+     position: relative;
+     height: 100%;
+     width: 100%;
+     grid-column: 1 / 3;
+     grid-row: 2 /3;
+     max-width: 100vw;
+ }
+
+ .blackFilter {
+     z-index: 1000;
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(180deg, rgba(102, 102, 102, 0) 0%, black 100%);
+     min-height: 100%;
+ }
+
+ .titlesAndRating {
+     position: absolute;
+     display: flex;
+     width: 100%;
+     height: 100%;
+     padding: 2rem;
+     padding-inline: 4rem;
+     z-index: 2000;
+     justify-content: space-between;
+     align-items: end;
+ }
+
+ .titleAndParagraph {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     width: 50%;
+ }
+
+ .titleAndParagraph2 {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     width: 100%;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     padding-top: 5rem;
+     height: fit-content;
+ }
+
+ .favoriteStyle {
+     transition: all 0.3s ease-in-out;
+ }
+
+ .favoriteStyle:hover {
+     transform: scale(1.1);
+ }
+
+
+ .multipleCards {
+     width: 100%;
+     max-width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     grid-column: 2/3;
+     grid-row: 3/4;
+     padding: 2rem;
+     background: linear-gradient(180deg, #454545 0%, #343434 100%);
+ }
+
+
+ .buttonRegister {
+     display: flex;
+     gap: 0.5rem;
+     color: var(--White1);
+     font-size: var(--h5);
+     font-weight: bold;
+ }
+
+ .buttonsContainer {
+     display: flex;
+     width: 223px;
+     height: 3rem;
+     background: var(--DarkBg1);
+     position: relative;
+     border-radius: 8px;
+ }
+
+ .buttonLoginAndRegister {
+     display: flex;
+     width: 100%;
+     height: 100%;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     z-index: 2;
+ }
+
+ .buttonLoginAndRegisterAnimation {
+     display: flex;
+     width: 50%;
+     height: 100%;
+     position: absolute;
+     border-radius: 8px;
+     transition: all 0.5s ease-in-out;
+     pointer-events: none;
+     background: var(--PrimaryYellow);
+     z-index: 1;
+ }
+
+
+ .buttonInitRegister {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 492px;
+     height: 2.5rem;
+     border-radius: 4px;
+     gap: 0.5rem;
+     background: var(--PrimaryYellow);
+     color: var(--DarkBg2);
+ }
+
+ .paragraph {
+     color: var(--White1);
+ }
+
+ .modalLoginContainer {
+     display: flex;
+     border-radius: 10px;
+     align-self: center;
+     justify-self: center;
+     transform-origin: center;
+     width: 90vw;
+     height: 90vh;
+     top: 2rem;
+     backdrop-filter: blur(10px);
+     border: 0.1rem solid;
+     border-color: linear-gradient(111deg, rgba(255, 255, 255, 0.25) 0%, #FFFFFF 99.18%);
+     ;
+     z-index: 9999;
+     padding: 2rem;
+     background: rgba(28, 28, 28, 0.2);
+
+ }
+
+ .backSite {
+     display: flex;
+     height: 100vh;
+     width: 100vw;
+     position: fixed;
+     left: 0;
+     top: 0;
+     z-index: 9999;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .paragraphSecond {
+     width: 80%;
+     color: var(--White1);
+     font-weight: normal;
+ }
+
+ .illustrationStyle {
+     object-fit: contain;
+     width: 85%;
+     height: auto;
+     position: absolute;
+     bottom: 0;
+ }
+
+ .firstSection {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 100%;
+     justify-content: space-between
+ }
+
+ .secondSection {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 100%;
+     background: var(--DarkBg2);
+     border-top-right-radius: 10px;
+     border-bottom-right-radius: 10px;
+     justify-content: space-between;
+     align-items: center;
+     position: relative;
+ }
+
+ .buttonBack {
+     width: fit-content;
+     gap: 0.5rem;
+     flex-direction: row-reverse;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .containerBuittons {
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     padding-top: 3rem;
+
+ }
+
+ .buttonAndParagraph {
+     height: 100%;
+     justify-content: center;
+     align-items: center;
+     gap: 8rem;
+     padding-top: 20rem;
+     display: flex;
+     flex-direction: column;
+ }
